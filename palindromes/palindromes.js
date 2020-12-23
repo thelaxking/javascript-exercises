@@ -1,6 +1,11 @@
 const palindromes = function(string) {
-    let forward = string.replace(/^_+|_+$/g,'')
-    let backward = 1
+    let forward = string.toLowerCase().replace(/[^A-Z0-9]/ig, "");
+    let backward = forward.split('').reverse().join('');
+    if (forward == backward) {
+        return true;
+    } else {
+        return false;
+    };
 }
 
 module.exports = palindromes
